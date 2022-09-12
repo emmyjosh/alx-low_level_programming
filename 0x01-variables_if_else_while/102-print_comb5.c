@@ -1,48 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+
 /**
- * main - main block
- * Description: Two two-digit numbers and followed by new line.
- * Return: 0
+ * main - Entry point
+ *
+ * Description: Write a program that prints two digit combinations
+ *
+ * Return: Always 0 (success)
  */
+
 int main(void)
 {
-int c;
-int d;
-int e;
-int f = 0;
-while (f < 10)
+int firstDigit = 0, seconDigit;
+
+while (firstDigit <= 99)
 {
-e = 0;
-while (e < 10)
+seconDigit = firstDigit;
+while (seconDigit <= 99)
 {
-d = 0;
-while (d < 10)
+if (seconDigit != firstDigit)
 {
-c = 0;
-while (c < 10)
-{
-if (!(f == c && e == d))
-{
-putchar('0' + f);
-putchar('0' + e);
+putchar((firstDigit / 10) + 48);
+putchar((firstDigit % 10) + 48);
 putchar(' ');
-putchar('0' + d);
-putchar('0' + c);
-if (!(f + e == 18 && c + d == 17 && d == 9))
+putchar((seconDigit / 10) + 48);
+putchar((seconDigit % 10) + 48);
+
+if (firstDigit != 98 || seconDigit != 99)
 {
 putchar(',');
 putchar(' ');
 }
 }
-c++;
+++seconDigit;
 }
-d++;
-}
-e++;
-}
-f++;
+++firstDigit;
 }
 putchar('\n');
+
 return (0);
+
 }
