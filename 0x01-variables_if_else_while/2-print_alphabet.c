@@ -1,4 +1,4 @@
-#tdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 /**
  *main - main block
@@ -10,7 +10,7 @@ int main(void)
 char c = 'a';
 
 while (c <= 'z')
-    {
+{
 putchar(c);
 c++;
 }
